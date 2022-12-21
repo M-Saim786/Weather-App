@@ -1,0 +1,26 @@
+.fa-cloud-sun-rain{
+    color:  rgb(240, 85, 20); 
+}
+ul li {
+    margin: 0px 10px;
+}
+.d-flex{
+    margin: 10px;
+}
+h4{
+    display: inline-block;
+}
+
+.more{
+    float: right;
+    border-radius: 50%;
+    width: 6%;
+    height: 64px;
+    margin: 150px -34px;
+    position: relative;
+    z-index: 1;
+
+}
+.more i {
+    font-size: 24px;
+}

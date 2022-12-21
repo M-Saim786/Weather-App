@@ -6,16 +6,17 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Weather App</title>
-    <!-- <link rel="stylesheet" href="../style.css"> -->
+<link rel="shortcut icon" href="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSLIW3MHeHuT7L8OOEd1wd-D8Pewp6u2_ee0YqXU3M-zfno0cyT9QrmFpO_wPsSO6SlbIM&usqp=CAU" type="image/x-icon">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.4.1/dist/css/bootstrap.min.css"
         integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
-
+    <script src="https://kit.fontawesome.com/19fcc4b5b5.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="./style.css">
 </head>
 
 <body>
     <nav class="navbar navbar-expand-lg bg-light">
         <div class="container-fluid">
-            <a class="navbar-brand" href="#">Weather App</a>
+            <a class="navbar-brand" href="#"><i class="fa-solid fa-cloud-sun-rain"></i> <h4>CurrWeather</h4></a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
                 data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
                 aria-label="Toggle navigation">
@@ -47,65 +48,70 @@
                 </ul>
                 <form class="d-flex" role="search">
                     <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search" id="city">
-                    <button class="btn btn-outline-success" type="submit" id="submit">Search</button>
+                    <button class="btn btn-outline-primary" type="submit" id="submit">Search</button>
                 </form>
             </div>
         </div>
     </nav>
 
+
     <div class="container">
+        <button class="more"><i class="fa-solid fa-arrow-right"></i></button>
         <h2 class="text-center my-2">Weather For <span id="cityname"></span></h2>
         <div class="row row-cols-1 row-cols-md-3 mb-3 text-center">
             <div class="col">
-                <div class="card mb-4 rounded-3 shadow-sm">
-                    <div class="card-header py-3">
-                        <h4 class="my-0 fw-normal">Temperature Info</h4>
+                <div class="card mb-4 rounded-3 shadow-sm border-primary">
+                    <div class="card-header py-3 text-bg-primary ">
+                        <h4 class="my-0 fw-normal">Temperature Info <i class="fa-solid fa-temperature-high"></i></h4>
                     </div>
                     <div class="card-body">
                         <h1 class="card-title pricing-card-title">
                             <span id="ctemp"></span><small class="text-muted fw-light"><sup>o</sup>C
-                            </small></h1>
+                            </small>
+                        </h1>
                         <ul class="list-unstyled mt-3 mb-4">
-                            <li> Temperature is <span id="temp"></span></li>
-                            <li>Min-Tempearture is <span id="min_temp"></span></li>
-                            <li>Max-Tempearture is <span id="max_temp"></span></li>
+                            <li> Temperature is <span id="temp"></span><sup>o</sup>C</li>
+                            <li>Min-Tempearture is <span id="min_temp"></span><sup>o</sup>C</li>
+                            <li>Max-Tempearture is <span id="max_temp"></span><sup>o</sup>C</li>
                         </ul>
-                        <button type="button" class="w-100 btn btn-lg btn-outline-primary">Sign up for free</button>
+
                     </div>
                 </div>
             </div>
             <div class="col">
-                <div class="card mb-4 rounded-3 shadow-sm">
-                    <div class="card-header py-3">
-                        <h4 class="my-0 fw-normal">Feels Like</h4>
+                <div class="card mb-4 rounded-3 shadow-sm border-primary">
+                    <div class="card-header py-3 text-bg-primary ">
+                        <h4 class="my-0 fw-normal">Feels Like <i class="fa-solid fa-wind"></i></h4>
                     </div>
                     <div class="card-body">
                         <h1 class="card-title pricing-card-title">
-                            <span id="feellike"></span><small class="text-muted fw-light"><sup>o</sup>C</small></h1>
+                            <span id="feellike"></span><small class="text-muted fw-light"><sup>o</sup>C</small>
+                        </h1>
                         <ul class="list-unstyled mt-3 mb-4">
                             <li>Cloud PCT is <span id="cloud_pct"></span></li>
-                            <li>Feels Like is <span id="feels_like"></span></li>
-                            <li>Humidity is <span id="humidity"></span></li>
-                         
-                         </ul>
-                        <button type="button" class="w-100 btn btn-lg btn-primary">Get started</button>
+                            <li>Feels Like is <span id="feels_like"></span><sup>o</sup>C</li>
+                            <li>Humidity is <span id="humidity"></span>%</li>
+
+                        </ul>
+
                     </div>
                 </div>
             </div>
             <div class="col">
                 <div class="card mb-4 rounded-3 shadow-sm border-primary">
                     <div class="card-header py-3 text-bg-primary border-primary">
-                        <h4 class="my-0 fw-normal">Wind Info</h4>
+                        <h4 class="my-0 fw-normal">Wind Info <i class="fa-solid fa-water"></i></h4>
                     </div>
                     <div class="card-body">
-                        <h1 class="card-title pricing-card-title"><span id="winds"></span><small class="text-muted fw-light">m/s</small></h1>
+                        <h1 class="card-title pricing-card-title"><span id="winds"></span><small
+                                class="text-muted fw-light">m/s</small></h1>
                         <ul class="list-unstyled mt-3 mb-4">
                             <li>Wind Speed is <span id="wind_speed"></span></li>
                             <!-- <li>Wind Degree is <span id="wind_degrees"></span></li> -->
                             <li>Sun Rise is <span id="sunrise"></span></li>
                             <li>Sun Set is <span id="sunset"></span></li>
                         </ul>
-                        <button type="button" class="w-100 btn btn-lg btn-primary">Contact us</button>
+
                     </div>
                 </div>
             </div>
@@ -141,10 +147,10 @@
                         <th><span id="humidity_hyd"></span></th>
                         <th><span id="sunrise_hyd"></span></th>
                         <th><span id="sunset_hyd"></span></th>
-                        <th><span id=" wind_degrees_hyd"></span></th>
-                        <th><span id=" wind_speed_hyd"></span></th>
-                    </tr>       
-                                 <tr>
+                        <th><span id="winddegreeshyd"></span></th>
+                        <th><span id="winds_hyd"></span></th>
+                    </tr>
+                    <tr>
                         <th scope="row" class="text-start">Karachi</th>
                         <th><span id="cloudpct"></span></th>
                         <th><span id="feelslike"></span></th>
@@ -154,8 +160,8 @@
                         <th><span id="humidity_kar"></span></th>
                         <th><span id="sunrise_kar"></span></th>
                         <th><span id="sunset_kar"></span></th>
-                        <th><span id=" wind_degrees_kar"></span></th>
-                        <th><span id=" wind_speed_kar"></span></th>
+                        <th><span id="wind_degrees_kar"></span></th>
+                        <th><span id="wind_speed_kar"></span></th>
                     </tr>
                 </tbody>
 
@@ -163,19 +169,19 @@
                     <tr>
                         <th scope="row" class="text-start">Lahore</th>
                         <th><span id="cloudpct_lhr"></span></th>
-                      <th><span id="feelslike_lhr"></span></th>
-                      <th><span id="temp_lhr"></span></th>
-                      <th><span id="max_temp_lhr"></span></th>
-                      <th><span id="min_temp_lhr"></span></th>
-                      <th><span id="humidity_lhr"></span></th>
-                      <th><span id="sunrise_lhr"></span></th>
-                      <th><span id="sunset_lhr"></span></th>
-                      <th><span id="wind_degrees_lhr"></span></th>
-                      <th><span id="wind_speed_lhr"></span></th>
+                        <th><span id="feelslike_lhr"></span></th>
+                        <th><span id="temp_lhr"></span></th>
+                        <th><span id="max_temp_lhr"></span></th>
+                        <th><span id="min_temp_lhr"></span></th>
+                        <th><span id="humidity_lhr"></span></th>
+                        <th><span id="sunrise_lhr"></span></th>
+                        <th><span id="sunset_lhr"></span></th>
+                        <th><span id="wind_degrees_lhr"></span></th>
+                        <th><span id="wind_speed_lhr"></span></th>
                     </tr>
                     <tr>
                         <th scope="row" class="text-start">Islamabad</th>
-                        <th><span id="cloudpct_isl"></span></th>
+                        <th><span id="cloudisl"></span></th>
                         <th><span id="feelslike_isl"></span></th>
                         <th><span id="temp_isl"></span></th>
                         <th><span id="max_temp_isl"></span></th>
@@ -186,27 +192,7 @@
                         <th><span id="wind_degrees_isl"></span></th>
                         <th><span id="wind_speed_isl"></span></th>
                     </tr>
-                    <!-- <tr>
-                        <th scope="row" class="text-start"> Multan</th>
-                        <th>1</th>
-                        <th>2</th>
-                        <th>3</th>
-                        <th>4</th>
-                        <th>5</th>
-                        <th>6</th>
-                        <th>7</th>
-                        <th>8</th>
-                        <th>9</th>
-                        <th>10</th>
-                    </tr>
-                    <tr>
-                        <th scope="row" class="text-start">Extra security</th>
-                        <td></td>
-                        <td></td>
-                        <td><svg class="bi" width="24" height="24">
-                                <use xlink:href="#check"></use>
-                            </svg></td>
-                    </tr> -->
+
                 </tbody>
             </table>
         </div>
@@ -214,6 +200,10 @@
 
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4"
+        crossorigin="anonymous"></script>
 
     <script src="./app.js"></script>
 </body>
